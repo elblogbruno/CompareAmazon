@@ -79,6 +79,7 @@ $token = csrfToken();
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cuenta — CompareAmazon</title>
   <link rel="stylesheet" href="/assets/landing.css" />
+  <script defer src="https://umami.brunomoya.com/script.js" data-website-id="0c6c7b8c-4e2d-4c1e-89b7-df0611212c0f"></script>
   <style>
     .auth-wrap { max-width:430px; margin:56px auto; padding:28px; border:1px solid var(--border); border-radius:16px; background:#fff; box-shadow:0 14px 36px rgba(15,23,42,.08); }
     .auth-tabs { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:20px; }
@@ -137,7 +138,7 @@ $token = csrfToken();
           <input id="password" name="password" type="password" required minlength="6" placeholder="••••••" />
         </div>
 
-        <button type="submit" class="btn btn-primary btn-lg" style="width:100%; border:none;">
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%; border:none;" data-umami-event="auth_submit" data-umami-event-mode="<?= $mode ?>">
           <?= $mode === 'register' ? 'Crear cuenta gratis' : 'Entrar al panel' ?>
         </button>
       </form>

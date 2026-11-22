@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/landing.css?v=14" />
+  <script defer src="https://umami.brunomoya.com/script.js" data-website-id="0c6c7b8c-4e2d-4c1e-89b7-df0611212c0f"></script>
 </head>
 <body>
   <nav class="nav">
@@ -24,9 +25,9 @@
       </a>
       <div class="nav-links">
         <a href="#funciones">Funciones</a>
-        <a href="/explorar">Explorar</a>
-        <a href="/panel">Mi cuenta</a>
-        <a href="#instalar" class="btn btn-primary btn-sm">Descargar gratis</a>
+        <a href="/explorar" data-umami-event="nav_click" data-umami-event-target="explorar">Explorar</a>
+        <a href="/panel" data-umami-event="nav_click" data-umami-event-target="panel">Mi cuenta</a>
+        <a href="#instalar" class="btn btn-primary btn-sm" data-umami-event="nav_click" data-umami-event-target="descargar">Descargar gratis</a>
       </div>
     </div>
   </nav>
@@ -40,10 +41,10 @@
           Olvídate de saltar entre 10 pestañas para decidir qué comprar. Elige los productos que tienes abiertos, compáralos en una tabla clara con cupones, fotos y reseñas, compártela por enlace o envíalo todo a <strong>ChatGPT</strong> y <strong>Claude</strong>.
         </p>
         <div class="hero-ctas">
-          <a href="/downloads/compareamazon-extension.zip" class="btn btn-primary btn-lg" download>
+          <a href="/downloads/compareamazon-extension.zip" class="btn btn-primary btn-lg" download data-umami-event="download_extension" data-umami-event-source="hero">
             ⬇ Descargar extensión (.zip)
           </a>
-          <a href="#instalar" class="btn btn-outline btn-lg">
+          <a href="#instalar" class="btn btn-outline btn-lg" data-umami-event="install_guide_click">
             Ver cómo instalarla (30 s)
           </a>
         </div>
@@ -163,13 +164,13 @@
           <h2>Instálala en menos de 1 minuto</h2>
           <p>Compatible con Google Chrome, Microsoft Edge, Brave, Opera y Arc.</p>
           <ol class="install-steps">
-            <li>Descarga y descomprime el archivo <a href="/downloads/compareamazon-extension.zip" download>compareamazon-extension.zip</a>.</li>
+            <li>Descarga y descomprime el archivo <a href="/downloads/compareamazon-extension.zip" download data-umami-event="download_extension" data-umami-event-source="install_steps">compareamazon-extension.zip</a>.</li>
             <li>Abre <code>chrome://extensions</code> (o <code>edge://extensions</code>) y activa el <strong>Modo de desarrollador</strong> arriba a la derecha.</li>
             <li>Pulsa <strong>Cargar descomprimida</strong> y selecciona la carpeta que acabas de descomprimir.</li>
           </ol>
         </div>
         <div class="install-cta">
-          <a href="/downloads/compareamazon-extension.zip" class="btn btn-primary btn-lg" download>
+          <a href="/downloads/compareamazon-extension.zip" class="btn btn-primary btn-lg" download data-umami-event="download_extension" data-umami-event-source="install_cta">
             ⬇ Descargar v1.0 (.zip)
           </a>
           <span class="small-note">Ligera · Sin anuncios · Sin rastreadores</span>

@@ -87,6 +87,7 @@ $token = csrfToken();
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mi Panel — CompareAmazon</title>
   <link rel="stylesheet" href="/assets/landing.css" />
+  <script defer src="https://umami.brunomoya.com/script.js" data-website-id="0c6c7b8c-4e2d-4c1e-89b7-df0611212c0f"></script>
   <style>
     .dash-wrap { padding: 36px 0 64px; display:flex; flex-direction:column; gap:28px; }
     .flash { background:#ecfdf5; color:#047857; border:1px solid #a7f3d0; padding:10px 14px; border-radius:10px; font-size:13.5px; font-weight:600; }
@@ -143,7 +144,7 @@ $token = csrfToken();
         <input type="hidden" name="csrf" value="<?= htmlspecialchars($token, ENT_QUOTES, 'UTF-8') ?>" />
         <input type="hidden" name="action" value="claim_cmp" />
         <input type="text" name="link" placeholder="¿Creaste un enlace antes de iniciar sesión? Pega su URL o ID aquí para vincularlo..." />
-        <button type="submit" class="btn btn-primary btn-sm" style="border:none;">Vincular enlace</button>
+        <button type="submit" class="btn btn-primary btn-sm" style="border:none;" data-umami-event="dashboard_claim_link">Vincular enlace</button>
       </form>
       <?php if (count($myComparisons) === 0): ?>
         <p style="color:var(--muted); font-size:14px;">Todavía no tienes comparativas vinculadas a tu cuenta.</p>
@@ -163,13 +164,13 @@ $token = csrfToken();
                     <input type="hidden" name="csrf" value="<?= htmlspecialchars($token, ENT_QUOTES, 'UTF-8') ?>" />
                     <input type="hidden" name="action" value="toggle_public" />
                     <input type="hidden" name="cid" value="<?= htmlspecialchars($c['id'], ENT_QUOTES, 'UTF-8') ?>" />
-                    <button class="mini-btn" type="submit"><?= $c['is_public'] ? 'Hacer privada' : 'Hacer pública' ?></button>
+                    <button class="mini-btn" type="submit" data-umami-event="dashboard_toggle_visibility"><?= $c['is_public'] ? 'Hacer privada' : 'Hacer pública' ?></button>
                   </form>
                   <form class="inline-form" method="post" onsubmit="return confirm('¿Eliminar esta comparativa?');">
                     <input type="hidden" name="csrf" value="<?= htmlspecialchars($token, ENT_QUOTES, 'UTF-8') ?>" />
                     <input type="hidden" name="action" value="delete_cmp" />
                     <input type="hidden" name="cid" value="<?= htmlspecialchars($c['id'], ENT_QUOTES, 'UTF-8') ?>" />
-                    <button class="mini-btn danger" type="submit">Borrar</button>
+                    <button class="mini-btn danger" type="submit" data-umami-event="dashboard_delete_comparison">Borrar</button>
                   </form>
                 </td>
               </tr>

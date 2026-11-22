@@ -61,6 +61,15 @@ const CAMEL_PREFIXES = {
   "amazon.fr": "fr.", "amazon.it": "it.", "amazon.ca": "ca.", "amazon.com.au": "au.", "amazon.co.jp": "jp."
 };
 
+function trackEvent(name, data) {
+  try {
+    if (window.umami && typeof window.umami.track === "function") {
+      if (data) window.umami.track(name, data);
+      else window.umami.track(name);
+    }
+  } catch {}
+}
+
 function showToast(msg, ms = 4000) {
   toastEl.textContent = msg;
   toastEl.classList.remove("hidden");
@@ -556,6 +565,7 @@ function bindInteractiveHandlers(root) {
     img.addEventListener("click", () => {
       const p = products[+img.dataset.pidx];
       const imgs = p.images?.length ? p.images : p.image ? [p.image] : [];
+      trackEvent("comparison_lightbox_open", { type: "product" });
       openLightbox(imgs, activeImageIndex.get(p.asin || p.url) || 0, p.title);
     });
   });
@@ -563,7 +573,10 @@ function bindInteractiveHandlers(root) {
     btn.addEventListener("click", () => {
       const p = products[+btn.dataset.pidx];
       const r = btn.dataset.rtype === "critical" ? p.criticalReviews[+btn.dataset.ridx] : (p._sortedReviews || p.reviews)[+btn.dataset.ridx];
-      if (r?.images?.length) openLightbox(r.images, +btn.dataset.imgidx, r.title || p.title);
+      if (r?.images?.length) {
+        trackEvent("comparison_lightbox_open", { type: "review_photo" });
+        openLightbox(r.images, +btn.dataset.imgidx, r.title || p.title);
+      }
     });
   });
   root.querySelectorAll(".review-video-btn").forEach((btn) => {
@@ -572,7 +585,24 @@ function bindInteractiveHandlers(root) {
       const r = btn.dataset.rtype === "critical" ? p.criticalReviews[+btn.dataset.ridx] : (p._sortedReviews || p.reviews)[+btn.dataset.ridx];
       const vid = r?.videos?.[+btn.dataset.vididx];
       if (!vid?.url) return;
+      trackEvent("comparison_lightbox_open", { type: "review_video" });
       openVideoLightbox(vid.url, vid.poster, `Vídeo — ${r.title || p.title}`, p.url);
+    });
+  });
+  root.querySelectorAll(".product-title-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      trackEvent("comparison_amazon_click", { source: "product_title" });
+    });
+  });
+  root.querySelectorAll(".eu-pill").forEach((link) => {
+    link.addEventListener("click", () => {
+      trackEvent("comparison_amazon_click", { source: "eu_price" });
+    });
+  });
+  root.querySelectorAll(".history-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      const source = /keepa/i.test(link.href) ? "keepa" : "camel";
+      trackEvent("comparison_price_history_click", { source });
     });
   });
   root.querySelectorAll(".vote-btn").forEach((btn) => {
@@ -608,6 +638,7 @@ confirmVoteBtn.addEventListener("click", async () => {
     const data = await res.json();
     if (!res.ok || !data.ok) throw new Error(data.error || "Error");
     votesByKey = data.votes || votesByKey;
+    trackEvent("comparison_vote_submitted", { hasComment: comment.length > 0 });
     closeVoteModal();
     renderAll();
     showToast("¡Voto guardado!");
@@ -705,6 +736,7 @@ function buildAiPrompt() {
 }
 
 async function openAi(provider) {
+  trackEvent("comparison_ask_ai", { provider, productsCount: products.length });
   const prompt = buildAiPrompt();
   try { await navigator.clipboard.writeText(prompt); } catch {}
   const encoded = encodeURIComponent(prompt);
@@ -730,6 +762,7 @@ document.addEventListener("click", (e) => {
 
 copyLinkBtn.addEventListener("click", async () => {
   await navigator.clipboard.writeText(BOOT.shareUrl || location.href);
+  trackEvent("comparison_copy_link");
   showToast("Enlace copiado al portapapeles.");
 });
 quickChatGptBtn.addEventListener("click", () => { aiDropdown?.classList.add("hidden"); openAi("chatgpt"); });
@@ -744,9 +777,17 @@ themeToggleBtn.addEventListener("click", () => {
   const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
   document.documentElement.setAttribute("data-theme", next);
   themeToggleBtn.innerHTML = next === "dark" ? SUN_SVG : MOON_SVG;
+  trackEvent("comparison_theme_toggle", { theme: next });
 });
-toggleViewModeBtn.addEventListener("click", () => { cardMode = !cardMode; renderAll(); });
-toggleScorePanelBtn.addEventListener("click", () => scorePanel.classList.toggle("hidden"));
+toggleViewModeBtn.addEventListener("click", () => {
+  cardMode = !cardMode;
+  trackEvent("comparison_view_mode_toggle", { mode: cardMode ? "cards" : "table" });
+  renderAll();
+});
+toggleScorePanelBtn.addEventListener("click", () => {
+  scorePanel.classList.toggle("hidden");
+  trackEvent("comparison_filter_change", { filter: "score_panel" });
+});
 [weightPrice, weightRating, weightReviews].forEach((s) => {
   s.addEventListener("input", () => {
     weightPriceVal.textContent = weightPrice.value;
@@ -755,10 +796,19 @@ toggleScorePanelBtn.addEventListener("click", () => scorePanel.classList.toggle(
     renderAll();
   });
 });
-sortSelect.addEventListener("change", renderAll);
+sortSelect.addEventListener("change", () => {
+  trackEvent("comparison_sort_change", { sort: sortSelect.value });
+  renderAll();
+});
 maxBudgetInput.addEventListener("input", renderAll);
-diffOnlyToggle.addEventListener("change", renderAll);
-commonOnlyToggle.addEventListener("change", renderAll);
+diffOnlyToggle.addEventListener("change", () => {
+  trackEvent("comparison_filter_change", { filter: "diff_only", enabled: diffOnlyToggle.checked });
+  renderAll();
+});
+commonOnlyToggle.addEventListener("change", () => {
+  trackEvent("comparison_filter_change", { filter: "common_only", enabled: commonOnlyToggle.checked });
+  renderAll();
+});
 specSearchInput.addEventListener("input", renderAll);
 
 renderAll();

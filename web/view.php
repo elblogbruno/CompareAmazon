@@ -36,6 +36,7 @@ if (!$row) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/compare.css?v=14" />
+  <script defer src="https://umami.brunomoya.com/script.js" data-website-id="0c6c7b8c-4e2d-4c1e-89b7-df0611212c0f"></script>
     </head>
     <body>
       <header class="topbar">
@@ -155,6 +156,7 @@ $bootstrapJson = json_encode([
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/compare.css?v=14" />
+  <script defer src="https://umami.brunomoya.com/script.js" data-website-id="0c6c7b8c-4e2d-4c1e-89b7-df0611212c0f"></script>
 </head>
 <body>
   <header class="topbar">
@@ -203,7 +205,7 @@ $bootstrapJson = json_encode([
         </div>
       </div>
 
-      <a href="/#instalar" class="btn btn-ghost" style="text-decoration:none;">
+      <a href="/#instalar" class="btn btn-ghost" style="text-decoration:none;" data-umami-event="comparison_extension_cta">
         <svg class="svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         <span>Extensión</span>
       </a>
@@ -325,6 +327,6 @@ $bootstrapJson = json_encode([
   <div class="toast hidden" id="toast"></div>
 
   <script>window.__SHARED_COMPARE__ = <?= $bootstrapJson ?>;</script>
-  <script src="/assets/view.js?v=14"></script>
+  <script src="/assets/view.js?v=15"></script>
 </body>
 </html>

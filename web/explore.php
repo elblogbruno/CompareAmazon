@@ -37,6 +37,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Explorar comparativas — CompareAmazon</title>
   <link rel="stylesheet" href="/assets/landing.css" />
+  <script defer src="https://umami.brunomoya.com/script.js" data-website-id="0c6c7b8c-4e2d-4c1e-89b7-df0611212c0f"></script>
   <style>
     .explore-head { padding: 40px 0 24px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; }
     .explore-search { display:flex; gap:8px; }
@@ -75,7 +76,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h1 style="font-size:28px;letter-spacing:-0.02em;">Explorar comparativas recientes</h1>
         <p style="color:var(--muted);">Comparativas públicas compartidas por la comunidad de CompareAmazon.</p>
       </div>
-      <form class="explore-search" method="get" action="/explorar">
+      <form class="explore-search" method="get" action="/explorar" onsubmit="if(window.umami&&window.umami.track){window.umami.track('explore_search');}">
         <input type="search" name="q" value="<?= htmlspecialchars($q, ENT_QUOTES, 'UTF-8') ?>" placeholder="Buscar comparativas..." />
         <button type="submit" class="btn btn-primary btn-sm">Buscar</button>
       </form>
@@ -98,7 +99,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             if (count($imgs) >= 4) break;
           }
         ?>
-          <a class="cmp-card" href="/c/<?= rawurlencode($r['id']) ?>">
+          <a class="cmp-card" href="/c/<?= rawurlencode($r['id']) ?>" data-umami-event="explore_open_comparison" data-umami-event-products="<?= (int)$r['products_count'] ?>">
             <?php if ($imgs): ?>
               <div class="cmp-thumbs">
                 <?php foreach ($imgs as $u): ?>
