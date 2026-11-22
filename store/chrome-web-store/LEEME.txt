@@ -1,0 +1,11 @@
+IMÁGENES PARA CHROME WEB STORE
+
+Capturas: 01 a 05, en ese orden (1280 x 800). Máximo: cinco.
+Imagen promocional pequeña: promo-440x280.png
+Marquesina opcional: marquesina-1400x560.png
+
+Todos los PNG son RGB de 24 bits, sin canal alfa.
+Las capturas muestran la interfaz real del proyecto con productos, precios y valoraciones ficticios, identificados como datos de ejemplo.
+No son precios actuales ni una verificación del funcionamiento con Amazon o proveedores de IA.
+Los enlaces compartibles requieren cuenta; no se creó ni publicó ningún enlace.
+No se ha subido contenido a Chrome Web Store.

@@ -1,0 +1,73 @@
+{
+  "manifest_version": 3,
+  "name": "CompareAmazon — Comparador Inteligente",
+  "version": "1.1.0",
+  "description": "Compara tus pestañas de Amazon en una tabla clara con cupones, fotos, reseñas, enlaces compartibles y análisis con IA.",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.amazon.es/*",
+        "*://*.amazon.com/*",
+        "*://*.amazon.co.uk/*",
+        "*://*.amazon.de/*",
+        "*://*.amazon.fr/*",
+        "*://*.amazon.it/*",
+        "*://*.amazon.com.mx/*",
+        "*://*.amazon.ca/*",
+        "*://*.amazon.nl/*",
+        "*://*.amazon.pl/*",
+        "*://*.amazon.se/*",
+        "*://*.amazon.com.be/*",
+        "*://*.amazon.com.br/*",
+        "*://*.amazon.co.jp/*",
+        "*://*.amazon.com.au/*",
+        "*://*.amazon.in/*"
+      ],
+      "css": ["content.css"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "*://*.amazon.es/*",
+    "*://*.amazon.com/*",
+    "*://*.amazon.co.uk/*",
+    "*://*.amazon.de/*",
+    "*://*.amazon.fr/*",
+    "*://*.amazon.it/*",
+    "*://*.amazon.com.mx/*",
+    "*://*.amazon.ca/*",
+    "*://*.amazon.nl/*",
+    "*://*.amazon.pl/*",
+    "*://*.amazon.se/*",
+    "*://*.amazon.com.be/*",
+    "*://*.amazon.com.br/*",
+    "*://*.amazon.co.jp/*",
+    "*://*.amazon.com.au/*",
+    "*://*.amazon.in/*",
+    "https://www.compareamazon.es/*",
+    "https://compareamazon.es/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CompareAmazon — Comparar pestañas de Amazon",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

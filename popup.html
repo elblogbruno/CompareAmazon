@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CompareAmazon</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="18" rx="1.5"></rect>
+            <rect x="14" y="3" width="7" height="18" rx="1.5"></rect>
+          </svg>
+        </div>
+        <div>
+          <h1>CompareAmazon</h1>
+          <p class="subtitle">Elige las pestañas a comparar</p>
+        </div>
+      </div>
+      <label class="window-toggle" title="Incluir pestañas de todas las ventanas del navegador">
+        <input type="checkbox" id="allWindowsToggle" />
+        <span>Todas las ventanas</span>
+      </label>
+    </header>
+
+    <div class="toolbar" id="toolbar">
+      <span class="count-label" id="countLabel">0 productos detectados</span>
+      <div class="toolbar-actions">
+        <button type="button" class="link-btn" id="selectAllBtn">Todos</button>
+        <span class="sep">·</span>
+        <button type="button" class="link-btn" id="selectNoneBtn">Ninguno</button>
+      </div>
+    </div>
+
+    <main class="tab-list" id="tabList">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <span>Buscando pestañas de Amazon...</span>
+      </div>
+    </main>
+
+    <div class="status-banner hidden" id="statusBanner"></div>
+
+    <div class="quick-links-bar">
+      <a class="quick-link-pill" id="popupPanelLink" href="https://www.compareamazon.es/panel" target="_blank" rel="noopener noreferrer" title="Ver tus comparativas, enlaces compartidos y cuenta en compareamazon.es">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span id="popupPanelLabel">Mis links y panel</span>
+      </a>
+      <a class="quick-link-pill" href="https://www.compareamazon.es/explorar" target="_blank" rel="noopener noreferrer" title="Explorar comparativas públicas">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span>Explorar</span>
+      </a>
+    </div>
+
+    <footer class="footer">
+      <button type="button" class="btn-secondary hidden" id="openTrayBtn" title="Comparar los productos añadidos a la bandeja desde Amazon">
+        Bandeja (0)
+      </button>
+      <button type="button" class="btn-secondary hidden" id="openLastBtn" title="Abrir la última comparativa guardada">
+        Última tabla
+      </button>
+      <button type="button" class="btn-primary" id="compareBtn" disabled>
+        <span id="compareBtnText">Comparar seleccionados</span>
+      </button>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

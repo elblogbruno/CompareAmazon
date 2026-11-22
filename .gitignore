@@ -1,0 +1,13 @@
+# Generated extension packages (rebuilt locally)
+store/*.zip
+web/downloads/*.zip
+
+# Private server config with DB credentials (never commit)
+private/
+config.php
+.env
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+.vscode/

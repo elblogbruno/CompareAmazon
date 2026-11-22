@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — CompareAmazon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/landing.css?v=14" />
+  <style>
+    .legal-wrap { max-width: 780px; margin: 48px auto 72px; padding: 36px; border: 1px solid var(--border); border-radius: 16px; background: #fff; }
+    .legal-wrap h1 { font-size: 30px; margin-bottom: 8px; }
+    .legal-date { color: var(--muted); font-size: 13.5px; margin-bottom: 28px; }
+    .legal-wrap h2 { font-size: 18px; margin: 24px 0 8px; }
+    .legal-wrap p, .legal-wrap li { color: var(--muted); font-size: 14.5px; line-height: 1.7; }
+    .legal-wrap ul { padding-left: 20px; margin: 8px 0 12px; display: flex; flex-direction: column; gap: 6px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">
+        <span class="logo-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="18" rx="1.5"></rect>
+            <rect x="14" y="3" width="7" height="18" rx="1.5"></rect>
+          </svg>
+        </span>
+        <span>CompareAmazon</span>
+      </a>
+      <div class="nav-links">
+        <a href="/">Inicio</a>
+        <a href="/explorar">Explorar</a>
+        <a href="/panel" class="btn btn-primary btn-sm">Mi cuenta</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <article class="legal-wrap">
+      <h1>Política de Privacidad</h1>
+      <p class="legal-date">Última actualización: 22 de noviembre de 2026</p>
+
+      <p><strong>CompareAmazon</strong> (extensión de navegador y sitio web <code>https://www.compareamazon.es</code>) respeta tu privacidad y solo procesa la información estrictamente necesaria para comparar productos de Amazon a petición tuya.</p>
+
+      <h2>1. Qué datos lee la extensión</h2>
+      <ul>
+        <li><strong>Pestañas de Amazon abiertas:</strong> únicamente cuando abres el popup de la extensión o pulsas el botón <em>+ Comparar</em>, la extensión consulta las pestañas de Amazon para identificar fichas de producto y extraer datos públicos del producto (título, precio, cupones, imágenes, valoración, reseñas y especificaciones).</li>
+        <li><strong>Almacenamiento local:</strong> tus preferencias (tema, idioma), bandeja de comparación, notas personales, favoritos y comparativas guardadas se almacenan localmente en tu navegador mediante <code>chrome.storage.local</code>.</li>
+        <li><strong>Sin rastreo de navegación:</strong> la extensión no recopila historial de navegación, no ejecuta rastreadores de terceros y no vende ni comparte datos con anunciantes.</li>
+      </ul>
+
+      <h2>2. Datos enviados a compareamazon.es (opcional)</h2>
+      <ul>
+        <li><strong>Creación de cuenta:</strong> si decides crear una cuenta en <code>compareamazon.es</code>, guardamos únicamente tu nombre de usuario, correo electrónico y tu contraseña cifrada (hash seguro mediante <code>password_hash</code>).</li>
+        <li><strong>Enlaces compartibles:</strong> únicamente cuando pulsas explícitamente <em>Crear enlace compartible</em>, se envía el contenido de esa comparativa a nuestros servidores en <code>compareamazon.es</code> para generar un enlace único. Puedes cambiar su visibilidad (privada o pública en <em>Explorar</em>) o eliminarla en cualquier momento desde tu panel o desde la extensión.</li>
+      </ul>
+
+      <h2>3. Envío a asistentes de IA (ChatGPT, Claude, Gemini, Perplexity)</h2>
+      <p>Cuando pulsas un botón de IA, la extensión genera un texto localmente en tu navegador y lo copia a tu portapapeles o abre la web del asistente elegido. CompareAmazon no almacena ni intercepta tus conversaciones con dichos servicios.</p>
+
+      <h2>4. Eliminación de datos y contacto</h2>
+      <p>Puedes borrar tus comparativas compartidas en cualquier momento desde <a href="/panel">tu panel</a> y desinstalar la extensión desde <code>chrome://extensions</code> para eliminar todos los datos locales. Para cualquier consulta de privacidad, escríbenos desde el dominio <code>compareamazon.es</code>.</p>
+    </article>
+  </main>
+</body>
+</html>

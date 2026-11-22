@@ -1,0 +1,65 @@
+¿Cansado de abrir 10 pestañas de Amazon y saltar de una a otra intentando recordar cuál tenía mejor precio, cupón, garantía o menos quejas en las reseñas?
+
+CompareAmazon convierte tus pestañas abiertas de Amazon —o los productos que vayas añadiendo desde las búsquedas— en una tabla comparativa clara, moderna e interactiva en un solo clic. Decide mejor en segundos, pide consejo a tu IA favorita (ChatGPT, Claude, Gemini o Perplexity) o comparte la comparativa por WhatsApp con un enlace para decidir en familia o con amigos.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✨ QUÉ HACE COMPAREAMAZON POR TI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. COMPARA SIN PERDER TIEMPO
+• Selector de pestañas abiertas: detecta automáticamente todas las fichas de producto de Amazon abiertas en tu ventana (o en todas las ventanas del navegador), incluso si alguna pestaña está en suspensión.
+• Botón "+ Comparar" en las búsquedas de Amazon: añade candidatos a una bandeja flotante mientras navegas por los resultados sin tener que abrir decenas de pestañas.
+• Compara variantes de un mismo producto: añade distintas capacidades, colores o packs (por ejemplo 128 GB vs 256 GB) a la bandeja para ver si compensa la diferencia de precio.
+• Añade productos por URL o ASIN: incorpora nuevos candidatos directamente desde la propia tabla pegando su enlace o código ASIN.
+
+2. PRECIOS REALES, CUPONES Y AMAZON EUROPA
+• Detección automática de cupones: lee cupones de porcentaje o importe fijo y calcula el precio neto final real.
+• Precio por unidad y medida: muestra automáticamente el coste por kg, litro, 100 ml o unidad cuando Amazon lo indica.
+• Comparador de precios en Amazon Europa: consulta en un clic el precio del mismo ASIN en Amazon España (ES), Alemania (DE), Francia (FR) e Italia (IT) y resalta el país más barato.
+• Enlaces rápidos a historial de precios: accede directamente a la gráfica histórica de cada producto en Keepa y CamelCamelCamel para comprobar si la oferta es real.
+• Presupuesto máximo: introduce tu tope en euros y la tabla marcará al instante qué productos se pasan de tu presupuesto.
+
+3. GALERÍA COMPLETA Y RESEÑAS REALES DE COMPRADORES
+• Todas las fotos del producto: navega por la galería completa de cada producto con miniaturas y visor ampliado (lightbox) con teclado.
+• Distribución de estrellas (5★ a 1★): gráfico visual por producto para detectar de un vistazo si acumula demasiadas valoraciones negativas.
+• Reseñas con vídeos y fotos primero: prioriza las opiniones reales que incluyen vídeos o fotografías de compradores (con reproductor y visor ampliado).
+• Reseñas críticas separadas (1–3★): consulta en una fila aparte las quejas más repetidas antes de comprar.
+• Alertas y banderas rojas automáticas: avisos visibles si un producto supera el 15% de reseñas de 1–2★, tiene muy pocas reseñas, es vendedor externo sin Prime o conviene revisar su política de devoluciones.
+
+4. DECISIÓN INTELIGENTE E INTERACTIVA
+• Puntuación automática (Score sobre 10): ajusta con deslizadores cuánto te importa el precio, la valoración y el número de reseñas para coronar automáticamente un ganador recomendado.
+• Filtro "Solo diferencias": oculta al instante las filas idénticas y céntrate únicamente en lo que cambia entre productos.
+• Resaltado numérico en especificaciones: identifica automáticamente qué producto destaca en autonomía, capacidad, potencia, peso o ruido.
+• Cabecera fija y producto de referencia: el nombre y precio de cada producto permanecen fijos al hacer scroll, y puedes fijar tu favorito a la izquierda (📌) o arrastrar columnas para reordenarlas.
+• Notas personales, favoritos e historial: apunta pros y dudas en cada columna y guarda tus comparativas para consultarlas más adelante.
+• Modo claro y oscuro, idioma automático (ES / EN), impresión limpia a PDF y exportación a CSV o HTML offline.
+
+5. PREGUNTA A TU IA FAVORITA EN UN CLIC
+• Envía todos los datos de tu comparativa (precios, cupones, especificaciones, tus notas personales y reseñas destacadas y críticas) en un prompt estructurado a:
+  - ChatGPT
+  - Claude
+  - Gemini
+  - Perplexity
+• Personaliza el prompt indicando tu presupuesto, uso previsto o prioridades antes de enviarlo.
+
+6. COMPARTE POR ENLACE CON QUIEN QUIERAS (SIN QUE INSTALEN NADA)
+• Genera un enlace corto en compareamazon.es/c/... listo para mandar por WhatsApp, Telegram o correo.
+• Optimizado para móvil: se abre en una vista limpia de tarjetas con galería, precios, reseñas y enlaces directos a Amazon.
+• Colaborativo: tu familia, pareja o amigos pueden votar su opción favorita (👍) y dejar comentarios directamente en la comparativa.
+• Control total: actualiza el mismo enlace, hazlo público en compareamazon.es/explorar o bórralo cuando quieras desde tu panel.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🌍 TIENDAS DE AMAZON COMPATIBLES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Amazon.es, Amazon.com, Amazon.de, Amazon.fr, Amazon.it, Amazon.co.uk, Amazon.com.mx, Amazon.ca, Amazon.nl, Amazon.pl, Amazon.se, Amazon.com.be, Amazon.com.br, Amazon.co.jp, Amazon.com.au y Amazon.in.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔒 PRIVACIDAD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CompareAmazon no rastrea tu navegación ni vende datos a terceros. Tus comparativas locales se guardan en tu propio navegador y solo se suben a compareamazon.es cuando tú decides crear un enlace compartible.
+Política de privacidad: https://www.compareamazon.es/privacidad
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ENGLISH SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CompareAmazon turns your open Amazon tabs — or products added directly from Amazon search results — into a clean, side-by-side comparison table. Spot real net prices after coupons, compare EU Amazon prices (ES/DE/FR/IT), inspect full photo galleries, buyer review videos/photos and critical reviews, score products with custom weights, send structured prompts to ChatGPT, Claude, Gemini or Perplexity, and share interactive comparison links with voting and comments.

@@ -1,0 +1,16 @@
+Options -Indexes
+RewriteEngine On
+
+# Clean URLs
+RewriteRule ^c/([A-Za-z0-9_-]{4,16})/?$ view.php?id=$1 [L,QSA]
+RewriteRule ^explorar/?$ explore.php [L,QSA]
+RewriteRule ^cuenta/?$ auth.php [L,QSA]
+RewriteRule ^panel/?$ dashboard.php [L,QSA]
+RewriteRule ^salir/?$ logout.php [L,QSA]
+RewriteRule ^privacidad/?$ privacy.html [L,QSA]
+
+# Security headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

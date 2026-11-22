@@ -1,0 +1,114 @@
+/* CompareAmazon floating tray & inline buttons on Amazon */
+.ca-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  border: 1.5px solid #4f46e5;
+  background: #eef2ff;
+  color: #4338ca;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.06s;
+  line-height: 1.3;
+  z-index: 5;
+}
+
+.ca-add-btn:hover {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.ca-add-btn.in-tray {
+  background: #10b981;
+  border-color: #059669;
+  color: #ffffff;
+}
+
+.ca-add-btn.in-tray:hover {
+  background: #059669;
+}
+
+.ca-dp-btn {
+  margin: 8px 0 6px;
+  padding: 7px 14px;
+  font-size: 12.5px;
+}
+
+#ca-floating-tray {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2147483640;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: #0f172a;
+  color: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+#ca-floating-tray.ca-hidden {
+  display: none !important;
+}
+
+.ca-tray-thumbs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ca-tray-thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: #ffffff;
+  object-fit: contain;
+  padding: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ca-tray-count {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ca-tray-go {
+  padding: 7px 13px;
+  border-radius: 9px;
+  border: none;
+  background: #6366f1;
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ca-tray-go:hover {
+  background: #4f46e5;
+}
+
+.ca-tray-clear {
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: #cbd5e1;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.ca-tray-clear:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}

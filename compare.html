@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CompareAmazon — Tabla Comparativa</title>
+  <link rel="stylesheet" href="compare.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="brand-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="18" rx="1.5"></rect>
+          <rect x="14" y="3" width="7" height="18" rx="1.5"></rect>
+        </svg>
+      </div>
+      <div>
+        <h1>CompareAmazon</h1>
+        <p class="subtitle" id="headerSubtitle">Cargando comparativa...</p>
+      </div>
+    </div>
+
+    <div class="topbar-actions">
+      <div class="menu-wrap" id="aiMenuWrap">
+        <button type="button" class="btn btn-ai-custom" id="aiMenuBtn" aria-expanded="false">
+          <svg class="svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/></svg>
+          <span>Preguntar a IA</span>
+          <svg class="svg-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.85;"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown-menu hidden" id="aiDropdown">
+          <button type="button" class="dropdown-item" id="quickChatGptBtn">
+            <span class="dot-badge" style="background:#10a37f;"></span> ChatGPT
+          </button>
+          <button type="button" class="dropdown-item" id="quickClaudeBtn">
+            <span class="dot-badge" style="background:#d97757;"></span> Claude
+          </button>
+          <button type="button" class="dropdown-item" id="quickGeminiBtn">
+            <span class="dot-badge" style="background:#2563eb;"></span> Gemini
+          </button>
+          <button type="button" class="dropdown-item" id="quickPerplexityBtn">
+            <span class="dot-badge" style="background:#0e7490;"></span> Perplexity
+          </button>
+          <div class="dropdown-sep"></div>
+          <button type="button" class="dropdown-item" id="openAiModalBtn">
+            <svg class="svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.6.85 1 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            Personalizar prompt...
+          </button>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-ghost" id="openShareModalBtn" title="Compartir por enlace, WhatsApp, PDF o HTML">
+        <svg class="svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+        <span>Compartir</span>
+      </button>
+
+      <div class="menu-wrap" id="toolsMenuWrap">
+        <button type="button" class="btn btn-ghost" id="toolsMenuBtn" aria-expanded="false">
+          <svg class="svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+          <span>Más</span>
+        </button>
+        <div class="dropdown-menu hidden" id="toolsDropdown">
+          <button type="button" class="dropdown-item" id="refreshAllBtn">
+            <svg class="svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            Actualizar datos
+          </button>
+          <button type="button" class="dropdown-item" id="euPricesAllBtn">
+            <svg class="svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Precios Amazon Europa
+          </button>
+          <div class="dropdown-sep"></div>
+          <button type="button" class="dropdown-item" id="saveCompareBtn">
+            <svg class="svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Guardar comparativa
+          </button>
+          <button type="button" class="dropdown-item" id="openSavedBtn">
+            <svg class="svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            <span style="flex:1;">Comparativas guardadas</span>
+            <span class="count-pill hidden" id="savedCountPill">0</span>
+          </button>
+          <div class="dropdown-sep"></div>
+          <button type="button" class="dropdown-item" id="langToggleBtn">
+            <svg class="svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg>
+            Idioma: ES
+          </button>
+          <div class="dropdown-sep"></div>
+          <a class="dropdown-item" id="accountMenuLink" href="https://www.compareamazon.es/cuenta" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+            <svg class="svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span id="accountMenuLabel">Iniciar sesión en la web</span>
+          </a>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-ghost icon-only" id="themeToggleBtn" title="Cambiar tema claro/oscuro">
+        <svg class="svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="controls-bar" id="controlsBar">
+    <div class="controls-group">
+      <label class="control-select">
+        <span>Ordenar:</span>
+        <select id="sortSelect">
+          <option value="original">Orden de pestañas</option>
+          <option value="score-desc">Mejor puntuación (Score)</option>
+          <option value="price-asc">Precio: menor a mayor</option>
+          <option value="price-desc">Precio: mayor a menor</option>
+          <option value="rating-desc">Mejor valorados</option>
+          <option value="reviews-desc">Más reseñas</option>
+        </select>
+      </label>
+
+      <label class="budget-box" title="Marca los productos que superan tu presupuesto máximo (usando precio neto con cupón)">
+        <span>Máx:</span>
+        <input type="number" id="maxBudgetInput" min="0" step="1" placeholder="€" />
+      </label>
+
+      <button type="button" class="btn btn-ghost btn-sm" id="toggleScorePanelBtn" title="Ajustar pesos de la puntuación automática">
+        <svg class="svg-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <span>Score</span>
+      </button>
+
+      <label class="toggle-chip">
+        <input type="checkbox" id="diffOnlyToggle" />
+        <span>Solo diferencias</span>
+      </label>
+
+      <label class="toggle-chip">
+        <input type="checkbox" id="commonOnlyToggle" />
+        <span>Ocultar specs únicas</span>
+      </label>
+    </div>
+
+    <div class="controls-group">
+      <button type="button" class="btn btn-ghost btn-sm" id="openAddProductBtn" title="Añadir un producto pegando su URL de Amazon o su ASIN">
+        + Añadir URL / ASIN
+      </button>
+      <div class="search-box">
+        <input type="search" id="specSearchInput" placeholder="Filtrar especificaciones..." />
+      </div>
+    </div>
+  </section>
+
+  <section class="score-panel hidden" id="scorePanel">
+    <span class="score-panel-title">⚖️ Pesos del Score (sobre 10):</span>
+    <label class="slider-group">
+      <span>Precio (<strong id="weightPriceVal">40</strong>%)</span>
+      <input type="range" id="weightPrice" min="0" max="100" value="40" />
+    </label>
+    <label class="slider-group">
+      <span>Valoración (<strong id="weightRatingVal">40</strong>%)</span>
+      <input type="range" id="weightRating" min="0" max="100" value="40" />
+    </label>
+    <label class="slider-group">
+      <span>Nº Reseñas (<strong id="weightReviewsVal">20</strong>%)</span>
+      <input type="range" id="weightReviews" min="0" max="100" value="20" />
+    </label>
+  </section>
+
+  <div class="warning-bar hidden" id="warningBar"></div>
+
+  <main class="main-content" id="mainContent">
+    <div class="table-wrapper" id="tableWrapper"></div>
+  </main>
+
+  <!-- AI Prompt Modal -->
+  <div class="modal-backdrop hidden" id="aiModalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="aiModalTitle">
+      <div class="modal-header">
+        <div>
+          <h2 id="aiModalTitle">Enviar comparativa a una IA</h2>
+          <p class="modal-subtitle">Añade tus prioridades para recibir una recomendación a medida.</p>
+        </div>
+        <button type="button" class="close-btn" id="closeAiModalBtn" aria-label="Cerrar">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <label class="field-label" for="userContextInput">
+          ¿Qué es lo más importante para ti? (opcional)
+        </label>
+        <textarea
+          id="userContextInput"
+          rows="3"
+          placeholder="Ej: Lo voy a usar para trabajar 8 horas al día, priorizo durabilidad, buena relación calidad-precio y que no supere los 150€."
+        ></textarea>
+
+        <div class="modal-options">
+          <label class="toggle-chip">
+            <input type="checkbox" id="includeBulletsCheck" checked />
+            <span>Incluir puntos clave</span>
+          </label>
+          <label class="toggle-chip">
+            <input type="checkbox" id="includeSpecsCheck" checked />
+            <span>Incluir especificaciones</span>
+          </label>
+          <label class="toggle-chip">
+            <input type="checkbox" id="includeReviewsCheck" checked />
+            <span>Incluir reseñas y opiniones</span>
+          </label>
+        </div>
+
+        <div class="preview-header">
+          <span class="field-label">Vista previa del prompt</span>
+          <span class="char-count" id="promptCharCount">0 caracteres</span>
+        </div>
+        <textarea id="promptPreview" rows="10" readonly></textarea>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost" id="copyPromptBtn">📋 Copiar</button>
+        <div class="modal-footer-right">
+          <button type="button" class="btn btn-ai-chatgpt" id="modalChatGptBtn">✨ ChatGPT</button>
+          <button type="button" class="btn btn-ai-claude" id="modalClaudeBtn">✦ Claude</button>
+          <button type="button" class="btn btn-ai-gemini" id="modalGeminiBtn">◈ Gemini</button>
+          <button type="button" class="btn btn-ai-perplexity" id="modalPerplexityBtn">◎ Perplexity</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Product Modal -->
+  <div class="modal-backdrop hidden" id="addProductBackdrop">
+    <div class="modal modal-sm" role="dialog" aria-modal="true" aria-labelledby="addProductTitle">
+      <div class="modal-header">
+        <div>
+          <h2 id="addProductTitle">Añadir producto a la comparativa</h2>
+          <p class="modal-subtitle">Pega la URL completa de Amazon o el código ASIN (ej. B09V3KXJPB).</p>
+        </div>
+        <button type="button" class="close-btn" id="closeAddProductBtn" aria-label="Cerrar">&times;</button>
+      </div>
+      <div class="modal-body">
+        <label class="field-label" for="addProductInput">URL de Amazon o ASIN</label>
+        <input type="text" class="text-input" id="addProductInput" placeholder="https://www.amazon.es/dp/B0... o B0..." />
+        <label class="field-label" for="addProductDomain">Dominio (solo si pegas un ASIN suelto)</label>
+        <select class="text-input" id="addProductDomain">
+          <option value="www.amazon.es">amazon.es</option>
+          <option value="www.amazon.com">amazon.com</option>
+          <option value="www.amazon.de">amazon.de</option>
+          <option value="www.amazon.fr">amazon.fr</option>
+          <option value="www.amazon.it">amazon.it</option>
+          <option value="www.amazon.co.uk">amazon.co.uk</option>
+          <option value="www.amazon.com.mx">amazon.com.mx</option>
+        </select>
+        <p class="modal-error hidden" id="addProductError"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost" id="cancelAddProductBtn">Cancelar</button>
+        <button type="button" class="btn btn-ai-custom" id="confirmAddProductBtn">Añadir producto</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Save Comparison Modal -->
+  <div class="modal-backdrop hidden" id="saveModalBackdrop">
+    <div class="modal modal-sm" role="dialog" aria-modal="true" aria-labelledby="saveModalTitle">
+      <div class="modal-header">
+        <div>
+          <h2 id="saveModalTitle">Guardar comparativa</h2>
+          <p class="modal-subtitle">Guarda estos productos, favoritos y notas para consultarlos luego.</p>
+        </div>
+        <button type="button" class="close-btn" id="closeSaveModalBtn" aria-label="Cerrar">&times;</button>
+      </div>
+      <div class="modal-body">
+        <label class="field-label" for="saveNameInput">Nombre de la comparativa</label>
+        <input type="text" class="text-input" id="saveNameInput" placeholder="Ej: Auriculares Bluetooth, Sillas oficina..." />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost" id="cancelSaveModalBtn">Cancelar</button>
+        <button type="button" class="btn btn-ai-custom" id="confirmSaveBtn">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Share Modal -->
+  <div class="modal-backdrop hidden" id="shareModalBackdrop">
+    <div class="modal modal-sm" role="dialog" aria-modal="true" aria-labelledby="shareModalTitle">
+      <div class="modal-header">
+        <div>
+          <h2 id="shareModalTitle">Compartir comparativa</h2>
+          <p class="modal-subtitle">Envíala a cualquier persona sin que necesite instalar la extensión.</p>
+        </div>
+        <button type="button" class="close-btn" id="closeShareModalBtn" aria-label="Cerrar">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="share-link-card">
+          <div id="shareLinkForm">
+            <label class="field-label" for="shareTitleInput">Título del enlace (opcional)</label>
+            <input type="text" class="text-input" id="shareTitleInput" placeholder="Ej: Auriculares para mi hermana, Sillas oficina..." style="margin:6px 0 10px;" />
+            <label class="toggle-chip" style="margin-bottom:10px;">
+              <input type="checkbox" id="sharePublicCheck" />
+              <span>Hacer pública en compareamazon.es/explorar</span>
+            </label>
+            <div class="share-btn-row">
+              <button type="button" class="btn btn-ai-custom share-primary-btn" id="createShareLinkBtn">
+                🔗 Crear enlace compartible (compareamazon.es)
+              </button>
+              <button type="button" class="btn btn-ghost share-primary-btn hidden" id="updateShareLinkBtn">
+                🔄 Actualizar enlace anterior
+              </button>
+              <button type="button" class="btn btn-ghost share-primary-btn hidden" id="deleteShareLinkBtn" style="color:#dc2626;">
+                🗑️ Borrar enlace anterior
+              </button>
+            </div>
+          </div>
+          <div class="share-result hidden" id="shareResultBox">
+            <input type="text" class="text-input share-url-input" id="shareUrlOutput" readonly />
+            <div class="share-result-actions">
+              <button type="button" class="btn btn-ghost btn-sm" id="copyShareUrlBtn">📋 Copiar</button>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" id="openShareUrlLink" style="text-decoration:none;">↗ Abrir</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-ai-chatgpt btn-sm" id="sendWhatsappUrlLink" style="text-decoration:none;">💬 WhatsApp</a>
+            </div>
+          </div>
+          <p class="modal-error hidden" id="shareLinkError"></p>
+        </div>
+
+        <button type="button" class="share-option-btn" id="printPdfBtn">
+          <span class="share-option-icon">🖨️</span>
+          <span class="share-option-text">
+            <strong>Imprimir / Guardar como PDF</strong>
+            <span>Vista limpia lista para exportar a PDF o presupuestos.</span>
+          </span>
+        </button>
+
+        <button type="button" class="share-option-btn" id="copyWhatsappBtn">
+          <span class="share-option-icon">💬</span>
+          <span class="share-option-text">
+            <strong>Copiar resumen de texto para WhatsApp / Telegram</strong>
+            <span>Texto limpio con precios, cupones, valoraciones, tus notas y enlaces directos a Amazon.</span>
+          </span>
+        </button>
+        <button type="button" class="share-option-btn" id="exportHtmlBtn">
+          <span class="share-option-icon">🌐</span>
+          <span class="share-option-text">
+            <strong>Descargar página web offline (.html)</strong>
+            <span>Archivo único autocontenido por si prefieres enviarlo sin subirlo a internet.</span>
+          </span>
+        </button>
+        <button type="button" class="share-option-btn" id="exportCsvBtn">
+          <span class="share-option-icon">📊</span>
+          <span class="share-option-text">
+            <strong>Descargar hoja de cálculo (.csv)</strong>
+            <span>Compatible con Excel y Google Sheets.</span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Auth CTA Popup Modal -->
+  <div class="modal-backdrop hidden" id="authCtaBackdrop">
+    <div class="modal modal-sm" role="dialog" aria-modal="true" aria-labelledby="authCtaTitle">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="brand-badge" style="width:36px; height:36px; flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <h2 id="authCtaTitle">Crea tu cuenta gratis en CompareAmazon</h2>
+            <p class="modal-subtitle" id="authCtaSubtitle">Necesitas una cuenta para crear enlaces compartibles y guardar comparativas.</p>
+          </div>
+        </div>
+        <button type="button" class="close-btn" id="closeAuthCtaBtn" aria-label="Cerrar">&times;</button>
+      </div>
+      <div class="modal-body">
+        <ul class="auth-benefits">
+          <li>
+            <svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Enlaces cortos</strong> en <code>compareamazon.es/c/...</code> listos para enviar por WhatsApp.</span>
+          </li>
+          <li>
+            <svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Votos y comentarios</strong> de tu familia o amigos directamente en tu comparativa.</span>
+          </li>
+          <li>
+            <svg class="svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Control total</strong> desde tu panel para actualizar, publicar o borrar tus enlaces.</span>
+          </li>
+        </ul>
+
+        <div class="auth-cta-actions">
+          <a href="https://www.compareamazon.es/cuenta?mode=register" target="_blank" rel="noopener noreferrer" class="btn btn-ai-custom auth-cta-btn" style="text-decoration:none;">
+            Crear cuenta gratis (30 s)
+          </a>
+          <a href="https://www.compareamazon.es/cuenta?mode=login" target="_blank" rel="noopener noreferrer" class="btn btn-ghost auth-cta-btn" style="text-decoration:none;">
+            Ya tengo cuenta · Iniciar sesión
+          </a>
+        </div>
+      </div>
+      <div class="modal-footer" style="justify-content:center;">
+        <button type="button" class="btn btn-ghost btn-sm" id="recheckAuthBtn">
+          ↻ Ya inicié sesión, continuar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Saved Comparisons History Modal -->
+  <div class="modal-backdrop hidden" id="savedListBackdrop">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="savedListTitle">
+      <div class="modal-header">
+        <div>
+          <h2 id="savedListTitle">Comparativas guardadas</h2>
+          <p class="modal-subtitle">Carga cualquiera de tus comparativas anteriores con un clic.</p>
+        </div>
+        <button type="button" class="close-btn" id="closeSavedListBtn" aria-label="Cerrar">&times;</button>
+      </div>
+      <div class="modal-body" id="savedListBody"></div>
+    </div>
+  </div>
+
+  <!-- Image Lightbox Modal -->
+  <div class="lightbox-backdrop hidden" id="imageLightbox" role="dialog" aria-modal="true">
+    <div class="lightbox-content">
+      <div class="lightbox-header">
+        <div class="lightbox-title" id="lightboxTitle"></div>
+        <div class="lightbox-header-right">
+          <span class="lightbox-counter" id="lightboxCounter">1 / 1</span>
+          <button type="button" class="lightbox-close" id="lightboxCloseBtn" aria-label="Cerrar">&times;</button>
+        </div>
+      </div>
+      <div class="lightbox-stage">
+        <button type="button" class="lightbox-nav prev" id="lightboxPrevBtn" aria-label="Foto anterior">&#8249;</button>
+        <img id="lightboxImg" src="" alt="" />
+        <button type="button" class="lightbox-nav next" id="lightboxNextBtn" aria-label="Foto siguiente">&#8250;</button>
+      </div>
+      <div class="lightbox-thumbs" id="lightboxThumbs"></div>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast hidden" id="toast"></div>
+
+  <script src="scraper.js"></script>
+  <script src="compare.js"></script>
+</body>
+</html>
