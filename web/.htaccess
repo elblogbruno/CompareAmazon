@@ -8,6 +8,7 @@ RewriteRule ^cuenta/?$ auth.php [L,QSA]
 RewriteRule ^panel/?$ dashboard.php [L,QSA]
 RewriteRule ^salir/?$ logout.php [L,QSA]
 RewriteRule ^privacidad/?$ privacy.html [L,QSA]
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
 # Security headers
 <IfModule mod_headers.c>

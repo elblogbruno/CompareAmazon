@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /panel
+Disallow: /cuenta
+Disallow: /salir
+Disallow: /api/
+
+Sitemap: https://www.compareamazon.es/sitemap.xml
